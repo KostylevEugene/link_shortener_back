@@ -29,12 +29,12 @@ cur.execute('CREATE TABLE IF NOT EXISTS users ('
             'password	TEXT NOT NULL)')
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sdgjh48i3kjg'
+app.config['SECRET_KEY'] = 'secret_key'
 
 app.config['JWT_TOKEN_LOCATION'] = ['headers', 'cookies', "query_string", "json"]
 app.config["JWT_COOKIE_SECURE"] = False
 # Change this in your code!
-app.config["JWT_SECRET_KEY"] = "lkdspcol2DS43r3DCSsd"
+app.config["JWT_SECRET_KEY"] = "jwt_secret_key"
 app.config["JWT_COOKIE_CSRF_PROTECT"] = False
 jwt = JWTManager(app)
 salt = bcrypt.gensalt()
